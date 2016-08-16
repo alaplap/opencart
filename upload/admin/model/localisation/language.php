@@ -218,6 +218,9 @@ class ModelLocalisationLanguage extends Model {
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "attribute_description WHERE language_id = '" . (int)$language_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "attribute_group_description WHERE language_id = '" . (int)$language_id . "'");
+
+		$this->db->query("DELETE FROM " . DB_PREFIX . "banner_image WHERE language_id = '" . (int)$language_id . "'");
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "category_description WHERE language_id = '" . (int)$language_id . "'");
 
 		$this->cache->delete('category');
